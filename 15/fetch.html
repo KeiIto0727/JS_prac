@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>通信処理お試し</title>
+    </head>
+    <body>
+        <div class="result"></div>
+        <script>
+            fetch('http://127.0.0.1:5500/15/sample.json').then
+            (function(result){
+                return result.json();
+            }).then(function(json){
+                const result = document.querySelector('.result');
+                result.textContent = json.text;
+            }).catch(function(error){
+                console.log(error);
+            });
+        </script>
+    </body>
+</html>
